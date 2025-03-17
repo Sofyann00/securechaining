@@ -80,12 +80,12 @@ export default function TermsPage() {
                 <p>For any questions about these Terms of Service, please contact us at:</p>
                 <div className="mt-2">
                   <p>PT INFINITI TEKNOLOGI INDONESIA</p>
-                  <p>Komplek Perkantoran Duta Merlin Blok F13</p>
-                  <p>Jalan Gajah Mada, Petojo Utara</p>
-                  <p>Gambir, Jakarta Pusat</p>
+                  <p>Gedung Is Plaza Lt. 5</p>
+                  <p>Jl Pramuka Kav 150, Utan Kayu Utara</p>
+                  <p>Matraman, Jakarta Timur</p>
                   <p>DKI Jakarta, Indonesia</p>
                   <p>Email: admin@secureChaining.com</p>
-                  <p>Phone: (021) 50111528</p>
+                  <p>Phone: (021) 60288761</p>
                 </div>
               </div>
             </div>

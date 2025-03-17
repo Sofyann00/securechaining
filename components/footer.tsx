@@ -68,15 +68,15 @@ export function Footer() {
                     href="mailto:admin@secureChaining.com"
                     className="hover:text-foreground transition-colors"
                   >
-                    admin@secureChaining.com
+                    admin@securechaining.com
                   </a>
                 </p>
                 <p>
                   <a
-                    href="tel:021-50111528"
+                    href="tel:021-60288761"
                     className="hover:text-foreground transition-colors"
                   >
-                    021-50111528
+                    021-60288761
                   </a>
                 </p>
               </div>

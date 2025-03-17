@@ -72,11 +72,11 @@ export default function AboutPage() {
                 <p>Visit our office:</p>
                 <div className="mt-2">
                   <p>secureChaining</p>
-                  <p>Komplek Perkantoran Duta Merlin Blok F13</p>
-                  <p>Jalan Gajah Mada, Petojo Utara</p>
-                  <p>Gambir, Jakarta Pusat</p>
+                  <p>Gedung Is Plaza Lt. 5</p>
+                  <p>Jl Pramuka Kav 150, Utan Kayu Utara</p>
+                  <p>Matraman, Jakarta Timur</p>
                   <p>DKI Jakarta, Indonesia</p>
-                  <p>Kode Pos: 10130</p>
+                  <p>Kode Pos: 13120</p>
                 </div>
               </div>
             </div>
@@ -105,9 +105,9 @@ export default function AboutPage() {
               <div className="text-muted-foreground">
                 <p>Get in touch with us:</p>
                 <div className="mt-2 space-y-1">
-                  <p>Phone: (021) 50111528</p>
+                  <p>Phone: (021) 60288761</p>
                   <p>Email: admin@secureChaining.com</p>
-                  <p>WhatsApp: +62 812-7766-8953</p>
+                  <p>WhatsApp: +62 812-8845-8953</p>
                 </div>
               </div>
             </div>
