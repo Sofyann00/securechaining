@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Terms of Service - PT INFINITI TEKNOLOGI INDONESIA',
+  title: 'Terms of Service - PT INFINI TEKNOLOGI INDONESIA',
   description: 'Terms of Service and conditions for using secureChaining services',
 }
 
@@ -23,7 +23,7 @@ export default function TermsPage() {
                 1. Agreement to Terms
               </h2>
               <p className="text-muted-foreground">
-                By accessing and using the services provided by PT INFINITI TEKNOLOGI INDONESIA (hereinafter referred to as &quot;secureChaining&quot;), you accept and agree to be bound by the terms and provisions of this agreement.
+                By accessing and using the services provided by PT INFINI TEKNOLOGI INDONESIA (hereinafter referred to as &quot;secureChaining&quot;), you accept and agree to be bound by the terms and provisions of this agreement.
               </p>
             </div>
 
@@ -79,7 +79,7 @@ export default function TermsPage() {
               <div className="text-muted-foreground">
                 <p>For any questions about these Terms of Service, please contact us at:</p>
                 <div className="mt-2">
-                  <p>PT INFINITI TEKNOLOGI INDONESIA</p>
+                  <p>PT INFINI TEKNOLOGI INDONESIA</p>
                   <p>Gedung Is Plaza Lt. 5</p>
                   <p>Jl Pramuka Kav 150, Utan Kayu Utara</p>
                   <p>Matraman, Jakarta Timur</p>

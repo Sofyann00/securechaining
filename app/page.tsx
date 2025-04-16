@@ -199,7 +199,7 @@ export default function Home() {
           <p className="text-lg text-muted-foreground mb-8">
             Our team of security experts is ready to help protect your business from cyber threats.
           </p>
-          <Link href="/contact">
+          <Link href="mailto:admin@securechaining.com?subject=Security%20Consultation%20Request&body=Hello%20secureChaining%20Team%2C%0A%0AI'm%20interested%20in%20learning%20more%20about%20your%20security%20services.%20Please%20contact%20me%20to%20discuss%20a%20free%20security%20consultation.%0A%0AThank%20you%2C%0A%0A">
             <Button size="lg" className="bg-red-600 hover:bg-red-700">
               Get a Free Security Consultation
             </Button>
