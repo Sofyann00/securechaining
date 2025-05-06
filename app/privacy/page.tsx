@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy - PT INFINI TEKNOLOGI INDONESIA',
+  // title: 'Privacy Policy - PT INFINI TEKNOLOGI INDONESIA',
+  title: 'Privacy Policy',
   description: 'Privacy Policy for secureChaining services and customer data protection',
 }
 
@@ -95,7 +96,7 @@ export default function PrivacyPage() {
               <div className="text-muted-foreground">
                 <p>For any questions about this Privacy Policy, product authenticity, or our data practices, please contact us at:</p>
                 <div className="mt-2">
-                  <p>PT INFINI TEKNOLOGI INDONESIA</p>
+                  <p>secureChaining</p>
                   <p>Gedung Is Plaza Lt. 5</p>
                   <p>Jl Pramuka Kav 150, Utan Kayu Utara</p>
                   <p>Matraman, Jakarta Timur</p>

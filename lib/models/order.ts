@@ -13,7 +13,6 @@ const OrderSchema = new mongoose.Schema({
   total: { type: Number, required: true },
   status: { type: String, enum: ['pending', 'completed'], default: 'pending' },
   shippingAddress: { type: String, required: true },
-  courier: { type: String, required: true },
   date: { type: Date, default: Date.now },
   customerName: String,
   customerEmail: String,

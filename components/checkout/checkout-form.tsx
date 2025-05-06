@@ -16,12 +16,8 @@ import { useRouter } from "next/navigation";
 import { useUser } from "@/contexts/user-context";
 import { toast } from "sonner";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { CheckCircle, XCircle } from "lucide-react";
 
-const COURIER_OPTIONS = [
-  { id: "jne", name: "JNE", price: 15000 },
-  { id: "jnt", name: "J&T", price: 12000 },
-  { id: "sicepat", name: "SiCepat", price: 13000 },
-];
 export function CheckoutForm() {
   const { state, clearCart } = useCart();
   const { user, addOrder } = useUser();
@@ -29,6 +25,8 @@ export function CheckoutForm() {
   const [isLoading, setIsLoading] = useState(false);
   const [showPaymentDialog, setShowPaymentDialog] = useState(false);
   const [timeLeft, setTimeLeft] = useState(3600);
+  const [showSuccessDialog, setShowSuccessDialog] = useState(false);
+  const [showExpiredDialog, setShowExpiredDialog] = useState(false);
 
   useEffect(() => {
     if (!showPaymentDialog) return;
@@ -37,6 +35,8 @@ export function CheckoutForm() {
       setTimeLeft((prev) => {
         if (prev <= 0) {
           clearInterval(timer);
+          setShowPaymentDialog(false);
+          setShowExpiredDialog(true);
           return 0;
         }
         return prev - 1;
@@ -62,7 +62,6 @@ export function CheckoutForm() {
     email: "",
     phone: "",
     address: "",
-    courier: "",
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -83,7 +82,6 @@ export function CheckoutForm() {
         total: grandTotal,
         status: "pending" as const,
         shippingAddress: formData.address,
-        courier: formData.courier,
         customerName: formData.name,
         customerEmail: formData.email,
         customerPhone: formData.phone
@@ -126,11 +124,7 @@ export function CheckoutForm() {
     }
   };
 
-  const selectedCourier = COURIER_OPTIONS.find(
-    (c) => c.id === formData.courier
-  );
-  const shippingCost = selectedCourier?.price || 0;
-  const grandTotal = total + shippingCost;
+  const grandTotal = total;
 
   return (
     <>
@@ -169,7 +163,7 @@ export function CheckoutForm() {
           </div>
 
           <div>
-            <label className="block mb-2">Shipping Address</label>
+            <label className="block mb-2">Address</label>
             <Textarea
               required
               value={formData.address}
@@ -179,7 +173,7 @@ export function CheckoutForm() {
             />
           </div>
 
-          <div>
+          {/* <div>
             <label className="block mb-2">Courier Service</label>
             <Select
               value={formData.courier}
@@ -198,7 +192,7 @@ export function CheckoutForm() {
                 ))}
               </SelectContent>
             </Select>
-          </div>
+          </div> */}
         </div>
 
         <div className="border-t pt-4">
@@ -235,19 +229,59 @@ export function CheckoutForm() {
               {formatTime(timeLeft)}
             </div>
             <div className="text-center space-y-2">
-              <p className="font-semibold">MANDIRI</p>
-              <p className="font-mono text-xl">1640006459152</p>
-              <div className="text-center mb-2">PT INFINI TEKNOLOGI INDONESIA</div>
+              <img src="/qr_img.png" alt="QR Code" className="mx-auto w-40 h-40 object-contain" />
+              <div className="text-center mb-2">Secure Cloud</div>
             </div>
             <Button 
               onClick={() => {
                 setShowPaymentDialog(false);
                 clearCart();
-                router.push("/profile");
+                setShowSuccessDialog(true);
+                setTimeout(() => {
+                  setShowSuccessDialog(false);
+                  router.push("/profile");
+                }, 6000);
               }}
               className="w-full"
             >
               I have completed the payment
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      <Dialog open={showSuccessDialog} onOpenChange={setShowSuccessDialog}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle className="text-xl font-bold mb-4">
+              Payment Successful!
+            </DialogTitle>
+          </DialogHeader>
+          <div className="text-center space-y-4">
+            <CheckCircle className="w-16 h-16 text-green-500 mx-auto" />
+            <p>Thank you for your payment. Redirecting to your profile...</p>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      <Dialog open={showExpiredDialog} onOpenChange={setShowExpiredDialog}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle className="text-xl font-bold mb-4 text-red-600">
+              Payment Failed
+            </DialogTitle>
+          </DialogHeader>
+          <div className="text-center space-y-4">
+            <XCircle className="w-16 h-16 text-red-500 mx-auto" />
+            <p>Sorry, your payment is failed.</p>
+            <Button 
+              onClick={() => {
+                setShowExpiredDialog(false);
+                router.push("/cart");
+              }}
+              className="w-full"
+            >
+              Return to Cart
             </Button>
           </div>
         </DialogContent>

@@ -100,7 +100,8 @@ export function Footer() {
           {/* Copyright section */}
           <div className="col-span-1 md:col-span-4 mt-16 pt-8 border-t">
             <p className="text-sm text-muted-foreground text-center">
-              © {new Date().getFullYear()} PT INFINI TEKNOLOGI INDONESIA.
+              {/* © {new Date().getFullYear()} PT INFINI TEKNOLOGI INDONESIA. */}
+              © {new Date().getFullYear()} SecureChaining.
             </p>
           </div>
         </div>

@@ -14,7 +14,6 @@ export async function POST(req: Request) {
       total: body.total,
       status: body.status,
       shippingAddress: body.shippingAddress,
-      courier: body.courier,
       customerName: body.customerName,
       customerEmail: body.customerEmail,
       customerPhone: body.customerPhone

@@ -29,7 +29,6 @@ const UserSchema = new mongoose.Schema({
       default: 'pending'
     },
     shippingAddress: String,
-    courier: String,
     date: {
       type: Date,
       default: Date.now

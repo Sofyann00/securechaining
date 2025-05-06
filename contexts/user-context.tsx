@@ -17,7 +17,6 @@ type Order = {
   total: number;
   status: "pending" | "completed";
   shippingAddress: string;
-  courier: string;
 };
 
 type OrderItem = {
